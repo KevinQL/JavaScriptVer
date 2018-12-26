@@ -53,6 +53,17 @@ function crearFuncion(){
         })()
     )
 
+    var numero = 8;
+    for(var num=numero; num <= 10;num++){
+        arr.push(
+            (function(num){
+                return function(){
+                    console.log(num);
+                }
+            })(num)
+        );
+    }
+
     numero = 0;
     console.log("fin",numero);
 
@@ -70,3 +81,6 @@ funcion[3]();
 funcion[4]();
 funcion[5]();
 funcion[6]();
+funcion[7]();
+funcion[8]();
+funcion[9]();
