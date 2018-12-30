@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS NO es ASINCRONO!!!!!! :O</title>
+    <title>Document</title>
 </head>
 <body>
-    
-    <button onclick="presionoClick()">BOTON</button>
+    <h1>HOLA MUNDO!!</h1>
+    <script src="cookiesjs.js"></script>
+    <script>
 
-    <script src="app.js"></script>
+        function saludar(){
+            console.log("hola mundo en js")
+        }
+
+        function crearCookie( nombre, valor ){
+            var hoy = new Date();
+            hoy.setMonth( hoy.getMonth() + 1 );
+
+            document.cookie = nombre + "=" + valor + ";expires=" + hoy.toUTCString() + ";";
+        }
+
+        function eliminarCookie( nombre ){
+            var hoy = new Date();
+            hoy.setMonth( hoy.getMonth() - 1 );
+            document.cookie = nombre+"=x;expires="+hoy.toUTCString()+";";
+        }
+
+        function getCookie( nombre ){
+            var cookArr = document.cookie.split("; ");
+            //console.log( cookArr );
+            for(var i=0; i < cookArr.length; i++){
+                cookArr[i] = cookArr[i].split("=");
+                if( cookArr[i][0] === nombre ){
+                    return unescape( cookArr[i][1] );
+                }
+            }
+            //console.log( cookArr );
+            return undefined;
+        }
+        //------------------------------------------  
+        //------------------------------------------  
+        saludar();
+        crearCookie("nombre", "kevv");
+        console.log( getCookie("nombre") );
+    </script>
 </body>
 </html>
