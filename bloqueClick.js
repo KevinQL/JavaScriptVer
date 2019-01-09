@@ -17,5 +17,5 @@ document.onmousedown = function( arg ){
 document.onmouseup = function( arg ){
     var texto = window.getSelection().toString(); // Captura la selección de texto
     console.log( texto );
-    console.log( arg );
+    console.log( "Arg->",arg );
 }
