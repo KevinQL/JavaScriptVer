@@ -10,6 +10,9 @@ function myTexto( arg ){
     console.log( arg );
 }
 
+function saluda( arg ){
+    console.log(" hola ", arg)
+}
 
 var objeto = document.getElementById("btn");
 var objeto2 = document.getElementById("my_texto");
