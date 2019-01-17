@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    
+</head>
+<body>
+    <h1>HOLA A TODOSs!!</h1>
+    <script>
+        Swal({
+  title: 'Are you sure?',
+  text: 'You will not be able to recover this imaginary file!',
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Si, Eliminar!',
+  cancelButtonText: 'No, keep it'
+}).then((result) => {
+    console.log( result )
+    console.log( Swal )
+  if (result.value) {
+    Swal(
+      'Deleted!',
+      'Your imaginary file has been deleted.',
+      'success'
+    )
+  // For more information about handling dismissals please visit
+  // https://sweetalert2.github.io/#handling-dismissals
+  } else if (result.dismiss === Swal.DismissReason.cancel) {
+    Swal(
+      'Cancelado',
+      'Tu archivo imaginario no se eliminó :)',
+      'error'
+    )
+  }
+})
+    </script>
+</body>
+</html>
